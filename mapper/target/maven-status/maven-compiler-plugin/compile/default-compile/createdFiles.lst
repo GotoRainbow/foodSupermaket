@@ -1,0 +1,14 @@
+com\mapper\UsersMapper.class
+com\mapper\OrderItemsMapper.class
+com\mymapper\MyMapper.class
+com\mapper\UserAddressMapper.class
+com\mapper\StuMapper.class
+com\mapper\ItemsMapper.class
+com\mapper\ItemsParamMapper.class
+com\mapper\ItemsCommentsMapper.class
+com\mapper\ItemsImgMapper.class
+com\mapper\CategoryMapper.class
+com\mapper\OrderStatusMapper.class
+com\mapper\CarouselMapper.class
+com\mapper\OrdersMapper.class
+com\mapper\ItemsSpecMapper.class
