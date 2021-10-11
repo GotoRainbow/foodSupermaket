@@ -1,2 +1,4 @@
-com\foodMall\FoodMallApplication.class
+com\foodMall\config\Swagger2.class
 com\foodMall\controller\HelloController.class
+com\foodMall\controller\PossPortController.class
+com\foodMall\FoodMallApplication.class

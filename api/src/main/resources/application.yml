@@ -19,7 +19,7 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource          # 数据源类型：HikariCP
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/foodMall?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2b8
+    url: jdbc:mysql://localhost:3306/foodmall?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2b8
     username: root
     password: root
     hikari:
@@ -41,6 +41,8 @@ spring:
   mybatis:
     type-aliases-package: com.pojo          # 所有POJO类所在包路径
     mapper-locations: classpath:mapper/*.xml      # mapper映射文件
+    configuration:
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
   ############################################################
   #
@@ -79,4 +81,5 @@ spring:
 logging:
   level:
     com.yurui.rediscache: debug
+
 
