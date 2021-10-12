@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="pojo" />
         <module name="api" />
         <module name="mapper" />
         <module name="common" />
         <module name="service" />
+        <module name="pojo" />
       </profile>
     </annotationProcessing>
   </component>
