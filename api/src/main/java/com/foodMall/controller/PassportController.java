@@ -6,6 +6,7 @@ import com.pojo.bo.UserBO;
 import com.utils.CookieUtils;
 import com.utils.IMOOCJSONResult;
 import com.utils.JsonUtils;
+import com.utils.MD5Utils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
@@ -17,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 
 @Api(value = "登录注册" , tags = "用于登录注册的接口")
 @RestController
-@RequestMapping("possport")
-public class PossPortController {
+@RequestMapping("passport")
+public class PassportController {
     @Autowired
     private UserService userService;
 
@@ -84,9 +85,11 @@ public class PossPortController {
         return userResult;
     }
 
+    @ApiOperation(value = "用户登录",notes = "用户登录",httpMethod = "POST")
+    @PostMapping("/login")
     public IMOOCJSONResult login(@RequestBody UserBO userBO,
                                  HttpServletRequest request,
-                                 HttpServletResponse response){
+                                 HttpServletResponse response) throws Exception {
 
         String username = userBO.getUsername();
         String password = userBO.getPassword();
@@ -94,15 +97,11 @@ public class PossPortController {
         if(StringUtils.isBlank(username) && StringUtils.isBlank(password)){
             return IMOOCJSONResult.errorMsg("用户名密码不能为空");
         }
-        //2、用户名是否已经存在
-        boolean result = userService.queryUsernameIsExist(username);
-        if(result){
-            return IMOOCJSONResult.errorMsg("用户名已经存在");
-        }
-        //3、密码不能少过6位
+        //2、密码不能少过6位
         if(password.length() < 6){
             return IMOOCJSONResult.errorMsg("密码不能少于6位");
         }
+        password = MD5Utils.getMD5Str(password);
         Users userResult = userService.queryUserForLogin(username,password);
 
         if (userResult == null){
@@ -118,6 +117,16 @@ public class PossPortController {
 
         return IMOOCJSONResult.ok();
 
+    }
+
+    @ApiOperation(value = "用户退出登录", notes = "用户退出登录", httpMethod = "POST")
+    @PostMapping("/logout")
+    public IMOOCJSONResult logout(@RequestParam String userId,
+                                  HttpServletRequest request,
+                                  HttpServletResponse response){
+
+        CookieUtils.deleteCookie(request,response,"user");
+        return IMOOCJSONResult.ok();
     }
 
 }

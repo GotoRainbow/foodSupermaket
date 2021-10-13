@@ -9,7 +9,6 @@ server:
     uri-encoding: UTF-8
   max-http-header-size: 80KB
 
-
   ############################################################
   #
   # 配置数据源信息
@@ -33,6 +32,7 @@ spring:
       connection-test-query: SELECT 1
 
 
+
   ############################################################
   #
   # mybatis 配置
@@ -41,6 +41,7 @@ spring:
   mybatis:
     type-aliases-package: com.pojo          # 所有POJO类所在包路径
     mapper-locations: classpath:mapper/*.xml      # mapper映射文件
+
     configuration:
       log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
@@ -78,8 +79,9 @@ spring:
 #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 #控制台查看SQL执行状况
-logging:
-  level:
-    com.yurui.rediscache: debug
+#logging:
+#  level:
+#    com.yurui.rediscache: debug
+
 
 

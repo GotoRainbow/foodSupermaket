@@ -1,5 +1,6 @@
 E:\selfProject\foodSupermaket\api\src\main\java\com\foodMall\config\CorsConfig.java
-E:\selfProject\foodSupermaket\api\src\main\java\com\foodMall\controller\PossPortController.java
+E:\selfProject\foodSupermaket\api\src\main\java\com\foodMall\controller\PassportController.java
 E:\selfProject\foodSupermaket\api\src\main\java\com\foodMall\FoodMallApplication.java
+E:\selfProject\foodSupermaket\api\src\main\java\com\foodMall\aspect\ServiceLogAspect.java
 E:\selfProject\foodSupermaket\api\src\main\java\com\foodMall\config\Swagger2.java
 E:\selfProject\foodSupermaket\api\src\main\java\com\foodMall\controller\HelloController.java
