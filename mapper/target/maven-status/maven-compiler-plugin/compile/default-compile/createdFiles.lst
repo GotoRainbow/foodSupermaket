@@ -2,6 +2,7 @@ com\mapper\UsersMapper.class
 com\mapper\OrderItemsMapper.class
 com\mymapper\MyMapper.class
 com\mapper\UserAddressMapper.class
+com\mapper\CategoryMapperCustom.class
 com\mapper\StuMapper.class
 com\mapper\ItemsMapper.class
 com\mapper\ItemsParamMapper.class

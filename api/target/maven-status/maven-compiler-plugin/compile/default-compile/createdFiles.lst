@@ -1,4 +1,6 @@
 com\foodMall\FoodMallApplication.class
+com\foodMall\controller\PassportController.class
+com\foodMall\controller\IndexController.class
 com\foodMall\config\Swagger2.class
 com\foodMall\controller\HelloController.class
 com\foodMall\aspect\ServiceLogAspect.class
