@@ -2,8 +2,10 @@ package com.foodMall.service;
 
 import com.pojo.Category;
 import com.pojo.vo.CategoryVO;
+import com.pojo.vo.NewItemsVO;
 
 import java.util.List;
+import java.util.Map;
 
 public interface CategoryService {
 
@@ -19,5 +21,13 @@ public interface CategoryService {
      * @return
      */
     List<CategoryVO> getSubCatList(Integer rootCatId);
+
+
+    /**
+     * 查询出最新的六个商品数据
+     * @param map
+     * @return
+     */
+    List<NewItemsVO> getSixNewItemsLazy(Map<String,Object> map);
 
 }

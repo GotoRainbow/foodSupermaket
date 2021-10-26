@@ -52,7 +52,7 @@ spring:
   ############################################################
   # 通用 Mapper 配置
   mapper:
-    mappers: com.imooc.my.mapper.MyMapper
+    mappers: com.mymapper
     not-empty: false
     identity: MYSQL
 

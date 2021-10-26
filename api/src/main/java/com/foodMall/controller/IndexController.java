@@ -6,6 +6,7 @@ import com.foodMall.service.CategoryService;
 import com.pojo.Carousel;
 import com.pojo.Category;
 import com.pojo.vo.CategoryVO;
+import com.pojo.vo.NewItemsVO;
 import com.utils.IMOOCJSONResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -18,7 +19,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.websocket.server.PathParam;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Api(value = "首页", tags = {"首页展示的相关接口"})
 @RestController
@@ -62,5 +65,23 @@ public class IndexController {
         }
         List<CategoryVO> result = categoryService.getSubCatList(rootCatId);
         return IMOOCJSONResult.ok(result);
+    }
+
+
+    @ApiOperation(value = "查询每个一级分类下的最新6条商品数据", notes = "查询每个一级分类下的最新6条商品数据", httpMethod = "GET")
+    @GetMapping("/sixNewItems/{rootCatId}")
+    public IMOOCJSONResult sixNewItems(
+            @ApiParam(name = "rootCatId", value = "一级分类id", required = true)
+            @PathVariable Integer rootCatId) {
+
+        if (rootCatId == null) {
+            return IMOOCJSONResult.errorMsg("分类不存在");
+        }
+
+        Map<String,Object> map = new HashMap<>();
+        map.put("rootCatId",rootCatId);
+
+        List<NewItemsVO> list = categoryService.getSixNewItemsLazy(map);
+        return IMOOCJSONResult.ok(list);
     }
 }
