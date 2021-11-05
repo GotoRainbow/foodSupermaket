@@ -2,9 +2,13 @@ package com.foodMall.service.impl;
 
 import com.enums.CommentLevel;
 import com.foodMall.service.ItemService;
+import com.github.pagehelper.PageHelper;
 import com.mapper.*;
 import com.pojo.*;
 import com.pojo.vo.CommentLevelCountsVO;
+import com.pojo.vo.ItemCommentVO;
+import com.pojo.vo.ShopcartVO;
+import com.utils.DesensitizationUtil;
 import com.utils.PagedGridResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +37,9 @@ public class ItemServiceImpl implements ItemService {
 
     @Autowired
     private ItemsParamMapper itemsParamMapper;
+
+    @Autowired
+    private ItemsMapperCustom itemsMapperCustom;
 
     @Override
     public Items queryItemById(String itemId) {
@@ -102,8 +109,18 @@ public class ItemServiceImpl implements ItemService {
         map.put("itemId",itemId);
         map.put("level",level);
 
+        /**
+         * page: 第几页
+         * pageSize: 每页显示条数
+         */
+        PageHelper.startPage(page, pageSize);
 
-        return null;
+        List<ItemCommentVO> list = itemsMapperCustom.queryItemComments(map);
+        for (ItemCommentVO vo : list) {
+            vo.setNickname(DesensitizationUtil.commonDisplay(vo.getNickname()));
+        }
+
+        return setterPagedGrid(list, page);
     }
 
     @Transactional(propagation = Propagation.SUPPORTS)
@@ -117,5 +134,25 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public PagedGridResult searhItems(Integer catId, String sort, Integer page, Integer pageSize) {
         return null;
+    }
+
+    @Override
+    public List<ShopcartVO> queryItemsBySpecIds(String specIds) {
+        return null;
+    }
+
+    @Override
+    public ItemsSpec queryItemSpecById(String specId) {
+        return null;
+    }
+
+    @Override
+    public String queryItemMainImgById(String itemId) {
+        return null;
+    }
+
+    @Override
+    public void decreaseItemSpecStock(String specId, int buyCounts) {
+
     }
 }
