@@ -1,4 +1,5 @@
 E:\selfProject\foodSupermaket\common\src\main\java\com\utils\IMOOCJSONResult.java
+E:\selfProject\foodSupermaket\common\src\main\java\com\utils\BeanMapUtils.java
 E:\selfProject\foodSupermaket\common\src\main\java\org\n3r\idworker\Id.java
 E:\selfProject\foodSupermaket\common\src\main\java\org\n3r\idworker\utils\HttpReq.java
 E:\selfProject\foodSupermaket\common\src\main\java\org\n3r\idworker\DayCode.java
@@ -8,6 +9,7 @@ E:\selfProject\foodSupermaket\common\src\main\java\com\utils\MobileEmailUtils.ja
 E:\selfProject\foodSupermaket\common\src\main\java\com\enums\Sex.java
 E:\selfProject\foodSupermaket\common\src\main\java\org\n3r\idworker\utils\IPv4Utils.java
 E:\selfProject\foodSupermaket\common\src\main\java\com\utils\MD5Utils.java
+E:\selfProject\foodSupermaket\common\src\main\java\com\utils\TimeUtils.java
 E:\selfProject\foodSupermaket\common\src\main\java\com\enums\CommentLevel.java
 E:\selfProject\foodSupermaket\common\src\main\java\org\n3r\idworker\Code.java
 E:\selfProject\foodSupermaket\common\src\main\java\com\utils\JsonUtils.java

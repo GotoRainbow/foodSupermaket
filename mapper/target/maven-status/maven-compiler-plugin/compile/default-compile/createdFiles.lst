@@ -9,6 +9,7 @@ com\mapper\ItemsParamMapper.class
 com\mapper\ItemsCommentsMapper.class
 com\mapper\ItemsImgMapper.class
 com\mapper\CategoryMapper.class
+com\mapper\ItemsMapperCustom.class
 com\mapper\OrderStatusMapper.class
 com\mapper\CarouselMapper.class
 com\mapper\OrdersMapper.class

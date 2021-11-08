@@ -51,10 +51,10 @@ spring:
   #
   ############################################################
   # 通用 Mapper 配置
-  mapper:
-    mappers: com.mymapper
-    not-empty: false
-    identity: MYSQL
+#  mapper:
+#    mappers: com.mymapper
+#    not-empty: false
+#    identity: MYSQL
 
 
 # mybatis-plus相关配置

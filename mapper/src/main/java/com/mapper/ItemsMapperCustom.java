@@ -3,7 +3,6 @@ package com.mapper;
 import com.pojo.vo.ItemCommentVO;
 import com.pojo.vo.SearchItemsVO;
 import com.pojo.vo.ShopcartVO;
-import com.pojo.vo.ItemCommentVO;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
