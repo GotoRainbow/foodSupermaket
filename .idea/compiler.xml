@@ -6,9 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="api" />
         <module name="mapper" />
+        <module name="api" />
         <module name="common" />
+        <module name="foodie-payment" />
         <module name="service" />
         <module name="pojo" />
       </profile>
@@ -18,6 +19,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api" options="-parameters" />
       <module name="common" options="-parameters" />
+      <module name="foodie-payment" options="-parameters" />
       <module name="mapper" options="-parameters" />
       <module name="pojo" options="-parameters" />
       <module name="service" options="-parameters" />

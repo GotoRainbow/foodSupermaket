@@ -15,7 +15,9 @@ public class ServiceLogAspect {
     @Around("execution(* com.foodMall.service.impl..*.*(..))")
     public Object recordTimeLog(ProceedingJoinPoint joinPoint) throws Throwable {
         log.info("====== 开始执行 {}.{} ======",
+                //1.获取切入点所在目标对象
                 joinPoint.getTarget().getClass(),
+                // 2.获取切入点方法的名字
                 joinPoint.getSignature().getName());
 
         // 记录开始时间

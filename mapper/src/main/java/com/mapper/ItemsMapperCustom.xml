@@ -4,23 +4,23 @@
 <mapper namespace="com.mapper.ItemsMapperCustom">
     <select id="queryItemComments" parameterType="Map" resultType="com.pojo.vo.ItemCommentVO">
         SELECT
-            ic.comment_level as commentLevel,
-            ic.content as content,
-            ic.sepc_name as specName,
-            ic.created_time as createdTime,
-            u.face as userFace,
-            u.nickname as nickname
+        ic.comment_level as commentLevel,
+        ic.content as content,
+        ic.sepc_name as specName,
+        ic.created_time as createdTime,
+        u.face as userFace,
+        u.nickname as nickname
         FROM
-            items_comments ic
+        items_comments ic
         LEFT JOIN
-            users u
+        users u
         ON
-            ic.user_id = u.id
+        ic.user_id = u.id
         WHERE
-            ic.item_id = #{paramsMap.itemId}
-            <if test=" paramsMap.level != null and paramsMap.level != '' ">
-                AND ic.comment_level = #{paramsMap.level}
-            </if>
+        ic.item_id = #{paramsMap.itemId}
+        <if test=" paramsMap.level != null and paramsMap.level != '' ">
+            AND ic.comment_level = #{paramsMap.level}
+        </if>
     </select>
 
 
@@ -29,23 +29,23 @@
     <!-- p: 根据价格排序-->
     <select id="searchItems" parameterType="Map" resultType="com.pojo.vo.SearchItemsVO">
         SELECT
-            i.id as itemId,
-            i.item_name as itemName,
-            i.sell_counts as sellCounts,
-            ii.url as imgUrl,
-            tempSpec.price_discount as price
+        i.id as itemId,
+        i.item_name as itemName,
+        i.sell_counts as sellCounts,
+        ii.url as imgUrl,
+        tempSpec.price_discount as price
         FROM
-            items i
+        items i
         LEFT JOIN
-            items_img ii
+        items_img ii
         on
-            i.id = ii.item_id
+        i.id = ii.item_id
         LEFT JOIN
-            (SELECT item_id,MIN(price_discount) as price_discount from items_spec GROUP BY item_id) tempSpec
+        (SELECT item_id,MIN(price_discount) as price_discount from items_spec GROUP BY item_id) tempSpec
         on
-            i.id = tempSpec.item_id
+        i.id = tempSpec.item_id
         WHERE
-            ii.is_main = 1
+        ii.is_main = 1
         <if test=" paramsMap.keywords != null and paramsMap.keywords != '' ">
             AND i.item_name like '%${paramsMap.keywords}%'
         </if>
